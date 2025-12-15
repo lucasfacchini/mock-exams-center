@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mock Exam Center</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+  <!-- Home -->
+  <div id="home" class="view">
+  <h1>📘 Mock Exam Center</h1>
+    <div id="upload-prompt" class="upload-prompt hidden">
+      <p>Unable to load exams.json from the server. Please upload a valid <code>exams.json</code> file.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+        <button id="upload-btn">Upload exams.json</button>
+        <button id="load-sample-btn">Load sample exams</button>
+      </div>
+  <input id="exams-file-input" type="file" accept="application/json" style="display:none" />
+  <p id="upload-msg" class="upload-msg"></p>
+  <details id="schema-details" class="schema-details">
+    <summary>View exams.json schema</summary>
+    <pre id="schema-pre" class="schema-pre">Loading schema…</pre>
+  </details>
+    </div>
+    <div id="exam-list"></div>
+    <div class="home-controls" style="margin-top:18px; text-align:center;">
+      <button id="clear-upload-btn">Clear Uploaded</button>
+    </div>
+  </div>
+
+  <!-- Exam -->
+  <div id="exam" class="view hidden">
+    <div class="top-bar">
+      <span id="progress-text"></span>
+  <span id="score-text"></span>
+  <button id="home-btn">Home</button>
+    </div>
+
+    <h2 id="question-title"></h2>
+    <ul id="answers"></ul>
+
+    <div id="controls" class="controls">
+      <button id="prev-btn" disabled>Previous</button>
+      <button id="next-btn">Next</button>
+      <button id="reveal-btn">Reveal Answers</button>
+    </div>
+
+    <div id="summary" class="summary hidden">
+      <h2>Exam Summary</h2>
+      <p>Correct: <span id="summary-correct">0</span></p>
+      <p>Wrong: <span id="summary-wrong">0</span></p>
+      <div class="summary-controls">
+    <button id="review-btn">Review All</button>
+    <button id="review-wrong-btn">Review Incorrect</button>
+        <button id="reset-btn">Reset and Start Over</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

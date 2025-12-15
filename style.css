@@ -1,0 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 16px;
+}
+
+.view.hidden {
+  display: none;
+}
+
+.hidden { display: none; }
+
+.exam-card {
+  background: white;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.exam-card:hover {
+  background: #eef2ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin-bottom: 8px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+li.selected {
+  background: #dbeafe;
+  border-color: #2563eb;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+li.correct {
+  background: #ecfdf5;
+  border-color: #10b981;
+}
+
+li.incorrect {
+  background: #fff1f2;
+  border-color: #ef4444;
+}
+
+li.disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.summary {
+  background: white;
+  padding: 16px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.summary.hidden { display: none; }
+
+.summary-controls { display: flex; gap: 8px; margin-top: 12px; }
+
+.badge {
+  display: inline-block;
+  background: #fde68a;
+  color: #92400e;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.upload-prompt {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed #ddd;
+  margin-bottom: 12px;
+}
+.upload-prompt p { margin: 8px 0; }
+.upload-msg { color: #b91c1c; font-size: 13px; }
+
+.schema-details { margin-top: 12px; }
+.schema-pre {
+  max-height: 320px;
+  overflow: auto;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+.home-controls { margin-bottom: 12px; }
