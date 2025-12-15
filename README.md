@@ -3,6 +3,15 @@ Mock Exam Center
 
 This is a quick and simple frontend application to help browse and take mock exams defined in a JSON file.
 
+### Home / Dashboard
+![Home](docs/images/screenshot1.png)
+
+### Exam list
+![Exam list](docs/images/screenshot2.png)
+
+### Taking an exam
+![Taking exam](docs/images/screenshot3.png)
+
 > This was created using Copilot so don't worry about it not being perfect.
 
 Quick start — run locally
