@@ -88,6 +88,7 @@ set +e
 aws s3 sync . "s3://$BUCKET" \
   --exclude ".git/*" \
   --exclude "venv/*" \
+  --exclude ".venv/*" \
   --exclude "node_modules/*" \
   --exclude "__pycache__/*" \
   --exclude "*.pyc" \

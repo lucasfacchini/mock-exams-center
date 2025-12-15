@@ -6,6 +6,7 @@ let state = null;
 const homeView = document.getElementById("home");
 const examView = document.getElementById("exam");
 const examList = document.getElementById("exam-list");
+const examListContainer = document.getElementById("exam-list-container");
 
 const questionTitle = document.getElementById("question-title");
 const answersEl = document.getElementById("answers");
@@ -60,6 +61,10 @@ fetch("exams.json")
 // Upload prompt handlers
 function showUploadPrompt() {
   if (uploadPrompt) uploadPrompt.classList.remove('hidden');
+  // hide the exam list container while prompting for upload
+  try {
+    if (examListContainer) examListContainer.style.display = 'none';
+  } catch (e) {}
   // load and display the exams.json schema so users know the expected format
   if (schemaPre) {
     schemaPre.textContent = 'Loading schema…';
@@ -196,6 +201,17 @@ function loadHome() {
   try {
     const hasUploaded = !!localStorage.getItem('uploaded_exams_json');
     if (clearUploadBtn) clearUploadBtn.style.display = hasUploaded ? '' : 'none';
+  } catch (e) {}
+
+  // show or hide the exam list container depending on whether there are exams
+  updateExamListVisibility();
+}
+
+// Show or hide the exam list container based on whether exams exist
+function updateExamListVisibility() {
+  try {
+    const hasExams = examsData && Array.isArray(examsData.exams) && examsData.exams.length > 0;
+    if (examListContainer) examListContainer.style.display = hasExams ? '' : 'none';
   } catch (e) {}
 }
 

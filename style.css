@@ -6,9 +6,9 @@ body {
 }
 
 #app {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  padding: 20px;
+  padding: 16px;
 }
 
 h1, h2 {
@@ -132,3 +132,47 @@ li.disabled {
 }
 
 .home-controls { margin-bottom: 12px; }
+
+/* Responsive / mobile-first adjustments */
+/* Make controls and buttons stack on small screens and be easy to tap */
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-direction: column; /* stack by default (mobile-first) */
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-weight: bold;
+  flex-wrap: wrap; /* allow items to wrap on narrow screens */
+  gap: 8px;
+}
+
+button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.exam-card, li, .upload-prompt, .summary {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Smaller typography on very small screens */
+@media (max-width: 360px) {
+  body { font-size: 14px; }
+  button { padding: 10px 14px; font-size: 15px; }
+}
+
+/* Restore multi-column/inline behaviors on larger screens */
+@media (min-width: 600px) {
+  .controls { flex-direction: row; }
+  button { width: auto; }
+  #app { padding: 20px; }
+}
+
+@media (min-width: 900px) {
+  #app { max-width: 900px; }
+}
